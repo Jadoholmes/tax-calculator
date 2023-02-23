@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Bin</title>
+  <link rel="stylesheet" type="text/css" href="home.css">
+</head>
+<div class= "bg-container">
+<body id= "body">
+  <div class="header">
+
+    <h1>
+
+        Tax Calculator
+   
+    </h1> 
+   </div>
+  
+  <div class="topnav">
+    <a href="#">Link</a>
+    <a href="#">Link</a>
+    <a href="#">Link</a>
+  </div>
+<h1 id = "h3">taxes</h1>
+<h1 id = "h2">made</h1>
+<h1 id = "h1">easy</h1>
+
+<a href="#calculator" id="calc">calculator</a>
+<section id="calculator">
+  <h1 id="scroller">
+   cal
+  </h1>
+</section>
+
+</div>
+<div id="header"></div>
+    
+<div id= "box">
+     
+  <h3 id = "output"><h3>
+<input id = "textInput1" type="text" placeholder="Check Amount">
+
+<form id="make_checkbox_select">
+
+    <select id="make">
+        <option  value=.5>Albama</option>
+        <option  value=0>Alaska</option>
+        <option  value=.56>Arizona</option>
+        <option  value=65>Arkansas</option>
+        <option  value=6>California</option>
+        <option  value=29>Colorado</option>
+        <option  value=635>Connecticut</option>
+        <option  value=0>Delaware</option>
+        <option  value=6>Florida</option>
+        <option  value=4>Georgia</option>
+        <option  value=4>Hawaii</option>
+        <option  value=6>Idaho</option>
+        <option  value=625>Illinois</option>
+        <option  value=6>Iowa</option>
+        <option  value=7>Indiana</option>
+        <option  value=65>Kansas</option>
+        <option  value=6>Kentucky</option>
+        <option  value=445>Louisiana</option>
+        <option  value=>Maine</option>
+        <option  value=>Maryland</option>
+        <option  value=>Massachusetts</option>
+        <option  value=>Michigan</option>
+        <option  value=>Minnesota</option>
+        <option  value=>Mississippi</option>
+        <option  value=>Missouri</option>
+        <option  value=>Montana</option>
+        <option  value=>Nebraska</option>
+        <option  value=>Nevada</option>
+        <option  value=>New Hampshire</option>
+        <option  value=>New Jersey</option>
+        <option  value=>New Mexico</option>
+        <option  value=>New York</option>
+        <option  value=>North Carolina</option>
+        <option  value=>North Dakota</option>
+        <option  value=>Ohio</option>
+        <option  value=>Oklahoma</option>
+        <option  value=>Oregon</option>
+        <option  value=>Pennsylvania</option>
+        <option  value=>Rhode Island</option>
+        <option  value=>South Carolina</option>
+        <option  value=>South Dakota</option>
+        <option  value=>Tennessee</option>
+        <option  value=>Texas</option>
+        <option  value=>Utah</option>
+        <option  value=>Vermont</option>
+        <option  value=>Virginia</option>
+        <option  value=>Washington</option>
+        <option  value=>West Virginia</option>
+        <option  value=>Wisconsin</option>
+        <option  value=>Wyoming</option>
+    </select>
+    <form id="make_checkbox_select">
+
+        <select id="makee">
+            <option value= 1 >Single</option>
+          <option value= 2 >Married filing jointly</option>
+ 
+        </select>
+
+      
+      
+ <button id = "BTN" type="button" onclick="getInputValue();">Get Value</button>
+      
+      <input id = "anualPay" type="text" placeholder="$ Anual Pay">
+
+    <script>
+   
+        function getInputValue(){
+            // Selecting the input element and get its value 
+            var inputVal = document.getElementById("textInput1").value;
+            var dropdown = document.getElementById("makee").value;
+            var anualPay = document.getElementById("anualPay").value;
+            var stateTax = document.getElementById("make").value;
+            var tb = 0;
+         function married()
+          {
+            if(anualPay < 22000){
+              tb = .10
+            }
+            else if (anualPay < 89450 || anualPay > 22000){
+              tb = .12
+            }
+            else if (anualPay < 190750 || anualPay > 89450){
+              tb = .22
+            }
+            else if (anualPay < 364200 || anualPay > 190750){
+              tb = .24
+            }
+            else if (anualPay < 462500 || anualPay > 364200){
+              tb = .32
+            }
+             else if (anualPay < 693750 || anualPay > 462500){
+              tb = .32
+            }
+            else{
+              tb = .37
+            }
+             var val = inputVal * tb
+             var value = val + stateTax
+             alert( value)
+          }
+          
+            function single()
+            {
+            if(anualPay < 11000){
+              tb = .10
+            }
+            else if (anualPay < 44725 || anualPay > 11000){
+              tb = .12
+            }
+            else if (anualPay < 95375 || anualPay > 44725){
+              tb = .22
+            }
+            else if (anualPay < 182100 || anualPay > 95375){
+              tb = .24
+            }
+            else if (anualPay < 231250 || anualPay > 182100){
+              tb = .32
+            }
+             else if (anualPay < 578125 || anualPay > 231250){
+              tb = .32
+            }
+            else{
+              tb = .37
+            }
+              var val = inputVal * tb
+                          var value = val + stateTax
+                          alert(value)
+          }
+         
+          
+          if(dropdown === 1){
+            single()
+          }
+          else{
+            married()
+          }
+          
+            // Displaying the value
+           
+        }
+      
+  </script>
+  </div>
+</body>
+</html>
